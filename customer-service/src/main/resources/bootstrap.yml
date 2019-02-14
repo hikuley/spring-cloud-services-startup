@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: customer-service
+
+  cloud.config:
+    discovery:
+      enabled: true
+      service-id: config-service
+    fail-fast: true
+    retry:
+      max-attempts: 60
+
+eureka:
+  client:
+    registry-fetch-interval-seconds: 60
+
+logging.level:
+  org.springframework.retry: trace
+
+

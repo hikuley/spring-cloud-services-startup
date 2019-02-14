@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: config-service
+
+  cloud:
+    config:
+      server:
+        # the server should configure itself from its own remote repository
+        bootstrap: true
+
+        git:
+          uri: file://${user.dir}/../spring-cloud-services-startup-config
+
+eureka:
+  instance:
+    lease-renewal-interval-in-seconds: 10
+
+logging.level:
+  com.netflix.discovery: trace
